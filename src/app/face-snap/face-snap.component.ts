@@ -11,8 +11,7 @@ export class FaceSnapComponent implements OnInit {
   createdDate!: Date;
   snaps!: number;
   imageUrl!: string;
-  alreadyLiked!: boolean;
-  textButton!: string;
+  buttonText!: string;
 
   ngOnInit() {
     this.title = 'Archibald';
@@ -20,20 +19,16 @@ export class FaceSnapComponent implements OnInit {
     this.createdDate = new Date();
     this.snaps = 6;
     this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
-    this.alreadyLiked = false;
-    this.textButton = 'Oh Snap (unliked)!';
+    this.buttonText = 'Oh Snap!';
   }
   
-  onClickSnap() {
-    if (this.alreadyLiked) {
-        this.snaps--;
-        this.textButton = 'Oh Snap (unliked)!';
-        this.alreadyLiked = false;
-    }
-    else {
+  onSnap() {
+    if (this.buttonText === 'Oh Snap!') {
         this.snaps++;
-        this.textButton = 'Oups On Snap (liked)!';
-        this.alreadyLiked = true;
-    };
+        this.buttonText = 'Oops, unSnap!';
+    } else {
+        this.snaps--;
+        this.buttonText = 'Oh Snap!';
+    }
   }
 }
