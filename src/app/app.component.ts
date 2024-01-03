@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
         imageUrl: 'https://cdn.pixabay.com/photo/2014/12/17/18/55/rock-571801_1280.jpg',
         createdDate: new Date(),
         snaps: 0,
-        location: 'La montagne'
+        location: 'la montagne'
     };
     this.myLastSnap = {
         title: 'Un bon repas',
