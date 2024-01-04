@@ -4,7 +4,7 @@ import { FaceSnap } from '../models/face-snap.model';
 @Injectable({
   providedIn: 'root'
 })
-export class FaceSnapService {
+export class FaceSnapsService {
   faceSnaps: FaceSnap[] = [
     {
         title: 'Archibald',
