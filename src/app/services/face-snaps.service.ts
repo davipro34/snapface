@@ -28,7 +28,7 @@ export class FaceSnapsService {
         imageUrl: 'https://cdn.pixabay.com/photo/2017/03/23/19/57/asparagus-2169305_1280.jpg',
         createdDate: new Date(),
         snaps: 150
-    }
+    },
     {
       title: 'Archibald',
       description: 'Mon meilleur ami depuis petit !',
@@ -53,4 +53,8 @@ export class FaceSnapsService {
       snaps: 255
   }
   ];
+
+  getAllFaceSnaps(): FaceSnap[] {
+    return this.faceSnaps;
+  }
 }
