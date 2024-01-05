@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { exhaustMap, delay, interval, map, of, take, tap } from 'rxjs';
+import { switchMap, delay, interval, map, of, take, tap } from 'rxjs';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
       take(10),
       map(value => value % 2 === 0 ? 'rouge' : 'jaune'),
       tap(color => console.log(`La lumière s'allume en %c${color}`, `color: ${this.translateColor(color)}`)),
-      exhaustMap(color => this.getTrainObservable$(color)),
+      switchMap(color => this.getTrainObservable$(color)),
       tap(train => console.log(`Train %c${train.color} ${train.trainIndex} arrivé !`, `font-weight: bold; color: ${this.translateColor(train.color)}`))
     ).subscribe();
   }
